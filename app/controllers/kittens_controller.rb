@@ -1,6 +1,22 @@
 class KittensController < ApplicationController
   def index
     @kittens = Kitten.all
+
+    respond_to do |format|
+      format.html
+      format.xml { render :xml => @kittens }
+      format.json { render :json => @kittens }
+    end
+  end
+
+  def show
+    @kitten = Kitten.find(params[:id])
+
+    respond_to do |format|
+      format.html
+      format.xml { render :xml => @kitten }
+      format.json { render :json => @kitten }
+    end
   end
 
   def new
@@ -16,10 +32,6 @@ class KittensController < ApplicationController
       flash[:alert] = "Fix your errors!"
       render :new
     end
-  end
-
-  def show
-    @kitten = Kitten.find(params[:id])
   end
 
   def edit
