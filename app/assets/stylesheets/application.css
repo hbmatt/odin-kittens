@@ -17,3 +17,23 @@
  .navbar {
    text-align:right;
  }
+
+ .field_with_errors {
+  display: inline-block
+}
+.field_with_errors label {
+  font-weight: 700;
+}
+.field_with_errors input {
+  border: 2px solid red;
+  border-radius: 3px;
+  padding: 4px;
+}
+
+#error_explanation {
+  border: 2px solid red;
+  border-radius: 5px;
+  margin: 0 auto 20px auto;
+  padding: 10px;
+  width: 75%;
+}
